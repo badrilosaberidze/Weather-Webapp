@@ -33,11 +33,11 @@ $(document).ready(function(){
     $("button").click(function(){
         let name=document.getElementById("City").value;
         $.get(`http://api.openweathermap.org/data/2.5/weather?q=${name}&units=metric&appid=fb8d58cdca03f5776cbe8e21a8656ddf`,function(data,status){
-            let info={
-                name:data.name, country:data.sys.country, temp:data.main.temp, 
-                head:data.weather[0].main, icon:data.weather[0].icon
-            };
             if (status!=404){
+                let info={
+                    name:data.name, country:data.sys.country, temp:data.main.temp, 
+                    head:data.weather[0].main, icon:data.weather[0].icon
+                };
                 if (lst.indexOf(info.name)==-1){
                     lst.push(info.name);
                     date=new Date(data.dt*1000-(data.timezone*1000));
