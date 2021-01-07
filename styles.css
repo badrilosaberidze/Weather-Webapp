@@ -136,3 +136,10 @@ input:focus{
     align-items: center;
     transition: width 1s , height 1s;
 }
+
+@media only screen and (max-width:600px){
+    .wrapper{
+        flex-direction: column;
+
+    }
+}
